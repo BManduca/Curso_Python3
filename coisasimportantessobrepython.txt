@@ -216,3 +216,21 @@ Ao inserir uma url e pressionar enter em um navegador, o que acontece é o segui
 HTTP para um servidor e este responde com código HTML, CSS e JS da página solicitada..
 
 em outras palavras, o navegador interpreta esse código e apresenta a página solicitada 
+
+
+Aula 32 - Trabalhando com Dados em JSON
+
+Os dados ou a resposta da API, está retornando como uma string, mas na verdade,
+os dados estão no formato JSON -> JavaScript Object Notation, um objeto em JavaScript
+ é como se fosse um dicionário em Python...
+
+ praticamente dentro do Python, o Json, seria ou uma lista ou um dicionario, convertida para string..
+
+ e qual a vantagem dessa conversão?
+ R.: A vantagem é que fazendo isso, você consegue enviar todos esses dados, para que possa ser usado em qualquer
+ linguagem de programação..
+
+ para fazer essa conversão em python, so precisa importar um módulo chamado json
+
+ e chamar o json.loads() e passar como parametro a resposta que esta como lista ou dicionario e foi convertida em
+ uma string
