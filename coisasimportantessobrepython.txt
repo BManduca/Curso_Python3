@@ -1,0 +1,218 @@
+Python3 do zero:
+
+ - python é uma linguagem do tipo case sensitive, ou seja, precisa diferenciar letras maiusculas e minusculas.
+ - no python não é possível criar variaveis que se iniciem com números
+ - ao criar uma variavel para um determinado tipo, usar para sempre guardando esse determinado tipo na mesma
+ - nunca criar variaveis com nomes que o python possa estar utilizando.
+
+ -> Aula 05 - Tipos de dados: strings
+ - no python, para as variaveis de Strings, a operação '+', realiza uma concatenação de strings
+ - a operação de '*' em uma variavel do tipo string realiza a repetição do conteudo armazenado na mesma, pela quantidade registrada
+ - as operaçãoes '/' e '-' não funcionam com dados do tipo string.
+ - no python uma variavel do tipo string, é tratada como uma sequencia de caracteres, por exemplo nome = 'Brunno', eu teria uma variavel do
+ tipo string, formado pela sequencia de 6 caracteres.
+ - a função len() é utilizada em python para obter o comprimeto da sequencia de caracteres presentes na variavel do tipo string
+ - para acessar os indices ou posicoes de uma variavel do tipo string, podemos usar por exemplo, os colchetes contendo a posição que queremos
+ verificar, por exemplo: nome[posicao]
+ - se caso for preciso iniciar uma analise da variavel string, de trás para frente, é somente fazer analise usando indice negativo, por exemplo,
+ nome[-1]
+ - pra devolver no caso 'fatias' da variavel do tipo string, podemos usar o slicing, que funciona da seguinte forma: se caso eu quiser pegar
+ os dois primeiros indices do meu nome, faria da seguinte forma nome[0:2], porque da 0 ate 2, porque eu estaria pegando o indice 0 e imprimindo em tela e em seguida o indice 1 e imprimindo em tela, fazendo assim a impressão dos dois primeiros indices do meu nome... nesse caso o terceiro nao imprimiria, podemos pensar assim, que é uma tratativa utilziando somente o sinal de < ou > e não >= ou <=.
+ - quando quiser ir até o final da palavra utilizando o slicing ou nao, é somente aplicar da seguinte forma: nome[0:] ou de trás pra frente:
+ nome[-6:]
+
+ -> Aula 06 - tipos de dados: números
+ - no python, é possivel realizar operaçãoes entre valores inteiros, floats...
+ - no pýthon as operações sempre irão respeitar a hierarquia da matemática, no caso primeiro os parênteses, depois os expoentes,
+ depois multiplicação e divisão e por último adição e subtração.
+ - é possível também efetuar comparações entre valores, através dos sinais de >, <, >=, <=..
+ - para facilitar o trabalho no python, foi desenvolvido um modulo chamado math, onde o mesmo contem diversas funcionalidades matematicas, 
+ para facilitar o desenvolver do codigo do usuario.
+ - para que o usuario possa inserir um valor ou dar uma entrada pelo teclado, existe uma funcao chamada input()
+
+ -> Aula 08 - tipos de dados: Listas e tuplas
+ - para fazer uma tupla , é preciso inicializar a mesma através dos parenteses e separar os itens dentro da mesma por vírgula.
+ - para fazer uma lista, é preciso inicializar a mesma através dos colchetes e separar os itens dentro da mesma por vírgula.
+ - diferença entre tuplas e listas, é que tuplas são imutáveis e as listas são mutáveis, o que isso quer dizer?
+ 	- significa que as listas pdoem ser modificadas, enquanto as tuplas não podem ser modificadas.
+ - para adicionar um novo elemento na lista, podemos estar utilizar o método .append(), onde o valor passado entre (), será o novo elemento da lista
+ e sempre adicionado ao final da mesma e para colocar um aluno em uma posição especifica, é realizado através do .insert('indice',valor), onde
+ é passado o indice na primeira posição e na segunda, o valor que vai popular esse indice.
+ - para ordenar a lista, é utilizado o método .sort(), onde não se precisa passar nada nos parenteses.
+ - para retirar um item da lista, é so utilizar o método .pop(), neste caso de remoção na verdade, há duas formas, pode ser passado como parametro, o índice com o método .pop() já mencionado ou o proprio valor, através do metodo .remove()
+ - é possível concatenar listas no python, através do '+', por exemplo, lista1 + lista2
+ 
+ -> Aula 10 - Tipos de dados: Dicionários
+ - Os dicionários em python são compostos de itens e estes itens são compostos pela combinação de chave x valor, por exemplo:
+ joao = {'nome': 'joao','sobrenome': 'pereira','profissao': 'programador python','filho': ['joao','maria']}
+ - utilizar os dicionários em python servem apra facilitar o dia a dia do programador
+ - se fosse fazer a mesma coisa utilizando listas, seria muito mais trabalhoso esse processo.
+ - dicionarios em python tem diversas funções para manipular os mesmos, como len(), del, para alterar um elemento, é so fazer o 
+ seguinte: joao['profissao'] = 'aposentado' por exemplo.
+ - para 'perguntar' se existe alguma chave especifica no dicionario, é so fazer da seguinte forma: 'sobrenome' in joao e o python vai
+ retornar true or false
+ - uso do for(loop) em python, funciona assim:
+ for x in joao:
+ 		print(x)
+
+ for x in joao:
+    print(x + ': ' + joao[x])
+
+
+o que isso quer dizer? 
+significa que o dicionario joao vai ser percorrido e logo impresso todas as chaves do mesmo.
+- existe o metodo get, onde pode se utilizar para um caso de validação, por exemplo:
+joao.get('nome','Esta informação não consta no cadastro.'), onde esse retorno seria o valor da chave nome,
+mas se fizesse um .get() com uma chave do dicionario que nao existe, retornaria a mensagem cadastrada e nao um erro.
+
+no caso dos filhos do joao, que são uma lista, é possivel adicionar um filho que recem nasceu por exemplo, 
+através do metodo .append(), da seguinte formna: joao['filhos'].append('jorge')
+- para limpar todo o dicionario em python existe o metodo .clear()
+- para fazer uma validação na entrada do input para garantir que nao ocorra problemas com relação 
+a entrada feita pelo usuario esteja maiuscula ou minuscula, iremos utilizar o metodo .lower() junto do
+input para garantir esse tratamento e todos os inputs ficarem com letras minusculas.
+
+Aula 12 - Lógica e Condicionais: if, Elif e Else
+- através das condicionais ou condições, são retornados valores booleans, como True e False e podem ser armazenados
+em uma variável.
+- operadores -> <,>,>=,<=,==,!=
+- algo pra analisar nos condicionais do python é a identação...por exemplo:
+	if idade >= 18:
+		print("Passou..")
+
+	-> tudo que estiver 'dentro' ou identado ao if...pertence a ele...
+
+- o python considera os valores vazio e 0 como falso e todos os outros valores como verdadeiro!
+
+
+Aula 15 - Loops: While
+- no while é posśivel utilizar todos os operadores vistos na aula de condicionais.
+- para fazer restrição com relação a um nome ou string, é possivel fazer da seguinte forma:
+	while 'string' not in:
+		codigo a ser executado
+- dentro do while é possivel colocar outros loops e condicionais, e para dar um stop em algum loop, por exemplo podemos utilizar 
+o comando continue, que vai 'forçar' a saida do loop e volte para o inicio do loop
+- outro comando que pode forçar a saida do loop, seria o break, que tem uma função parecida com o continue, porém, ele 
+nao volta para o inicio do loop e sim sai totalmente do programa.
+
+Aula 16 - loops: For
+- o for pode ser semelhante ao funcionamento do while, porém, sua escrita é diferente..
+por exemplo: 
+	for i in lista:
+		fazer alguma ação.
+
+
+Aula 18 - Validação de Dados
+
+- o que podemos analisar inicialmente, como por exemplo no exercicio da fatura, para 
+questão de teste é sempre bom, recorrer a alguem que teste para nos, pois, estamos condicionados a testar
+e tambem já conhecemos a lógica do programa....
+- ao adicionar um produto e o seu preço, o usuário/cliente pode colcoar assim: 10,00, porém, 
+o programa ao tentar converter essa informação/entrada de dados para float, dará erro, pois,
+os decimais em python, são separados por '.'
+- Uma solução como tratativa, pois este erro é terrível digamos, se acontecer...pois imagina, estar fazendo a entrada de dados
+de uma compra e já foi inserido 30 itens e seus valores e de repente...inserir uma informação errada, como produto no local do valor..e 
+perder toda informação ja inserida, pois o programa, irá fechar...então, seria muito bom, se ao acaso, isso acontecer, 
+ser retornado uma mensagem informando o erro e solicitar que o usuario/cliente efetue novamente a entrada de dados, 
+sem que o programa feche 
+- É sempre bom ter cautela na hora dos inputs e nao somente confiar que a pessoa não va inserir algo errado ou fora do 
+padrão especificado...muitas vezes pode ser de proposito pra testar...ou realmente inserir algo errado, por isso, é 
+bom fazer as devidas validações.
+
+
+
+Aula 20 - funções:
+
+- As funções tem comportamento parecido com os condicionais, que no caso, tudo que estiver
+aninhado, estará participando da função, o que estiver fora da identação, não participará da função
+
+ex.: 
+	def mensagem():
+		print('olá, seja bem vindo!');
+
+	print('saiu da função!');
+
+
+- Nas funções é possível utilizar com ou sem argumentos.
+
+ex.:
+
+user = 'Brunno'
+
+def mensagem(nome):
+		print('olá, seja bem vindo ' + nome + '!');
+	
+
+- Na mensagens, existe uma função bem interessante, que é pra quando fizermos um print
+e quisermos que a primeira letra por exemplo de um nome, seja maiuscula, é somente colocar 
+em seguida da váriavel a função '.title()', por exemplo: nome.title()
+
+ex.:
+	def mensagem(nome):
+		print('olá, seja bem vindo ' + nome.title() + '!');
+
+
+Aula 23 - Módulos
+
+O que são Módulos?
+R.: São arquivos com extensão .py e segnifica que todos os programas já feitos no curso ate aqui, são todos
+Módulos, porém, os módulos foram usados todos separadamente.
+
+O que vai ser visto nesta aula, será, como conectar diferentes modulos, abrindo assim, novas possibilidades no python.
+
+Aula 24 - Módulos Built-in
+
+para trazer o módulo para dentro do programa, foi como visto na última aula..
+através do import nome_modulo
+
+funções presentes no modulo Built-in math:
+
+math.ceil() -> arredonda o número sempre pra cima.
+math.floor() -> arredonda o número sempre pra baixo.
+math.fsum() -> realiza somátorio dos valores que forem passados como parametro, por exemplo, uma lista.
+math.sqrt() -> realiza a raiz quadrada de um valor
+
+
+funções presentes no modulo Built-in time:
+
+time.localtime() -> retorna diversas informações sobre a data, como por exemplo, o ano, o mês, o dia, a hora, minutos, segundos...
+
+
+
+Aula 25 - Módulos Built-in Parte 2
+
+através do do import random, é possível realizar seleção de valores aleatórios dentro de um intervalor ou 
+de um vetor, como por exemplo, do jogo da megasena que fizemos...
+
+ou também, através do choice, que irá selecionar um 'aluno' no exemplo de maneira aleatória para apresentar o trabalho, detro de uma 
+lista.
+
+podemos usar tambem a função sample, presente no random, para selecionar uma amostra dentro de um lista muito grande, que seria assim
+
+random.sample(lista,quantidade)
+
+
+Aula 26 - Módulos Externos
+
+Nesta aula será apresentado, como fazer import e instalação de módulos externos para o python
+
+Por exemplo: Pygames, para poder usufruir de jogos no python.
+
+wxPython: desenvolver interfaces gráficas e melhorar a interação com o usuário.
+
+diferença entre packages e modules, é que o packages é um conjunto de módulos.
+
+como algumas importações de packages e modules, podem ficar grandes, para facilitar 
+podemos utilizar o comando as e renomear para ficar mais facil de chamar ou acessar posteriormente.
+
+
+
+
+Aula 30 - Requisições HTTP em Python
+
+HTTP é o principal protocolo de transferência utilizado na internet 
+
+Ao inserir uma url e pressionar enter em um navegador, o que acontece é o seguinte... o navagador envia uma requisição
+HTTP para um servidor e este responde com código HTML, CSS e JS da página solicitada..
+
+em outras palavras, o navegador interpreta esse código e apresenta a página solicitada 
