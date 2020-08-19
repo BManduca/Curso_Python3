@@ -217,6 +217,12 @@ HTTP para um servidor e este responde com código HTML, CSS e JS da página soli
 
 em outras palavras, o navegador interpreta esse código e apresenta a página solicitada 
 
+Aula 30 - Obter localização do usuário
+
+- Estaremos buscando realziar uma requisição para o serviço do geoplugin, 
+onde o mesmo estará retornando o local(latitude e longitude), para podermos utilizar dentro do
+accuweather e assim, conseguirmos popular o app de previsão
+
 
 Aula 32 - Trabalhando com Dados em JSON
 
@@ -228,9 +234,47 @@ os dados estão no formato JSON -> JavaScript Object Notation, um objeto em Java
 
  e qual a vantagem dessa conversão?
  R.: A vantagem é que fazendo isso, você consegue enviar todos esses dados, para que possa ser usado em qualquer
- linguagem de programação..
+ linguagem de programação.. como PHP, JS, C#...
 
- para fazer essa conversão em python, so precisa importar um módulo chamado json
+ para fazer essa conversão em python, so precisa importar um módulo Built-in chamado json
 
  e chamar o json.loads() e passar como parametro a resposta que esta como lista ou dicionario e foi convertida em
  uma string
+
+
+ Aula 33 - fazer registro no accuweather
+
+ - Nesta aula estaremos buscando outra API, para que, ao fornecer as informações de latitude e longitude, 
+ acabará retornando a previsão do tempo, automaticamente da região aonde eu moro atualmente.
+
+	- developer.accuweather.com -> register
+	- verificar o email que você registrou -> confirmar account
+	- criar novo app -> MY APPS -> 'Add a new app'
+	- verificar a API Key
+
+
+Aula 34 - Obter código do Local (parte1)
+
+- Verificar e copiar sua API Key que ficou registrado no MY APPS do accuweather
+- criar uma variavel para armazenar a mesma dentro do seu codigo, pois, a mesma será muito utilizada.
+- API Reference -> o accuweather tem internamente diversas api's, por isso, sempre é 
+bom pesquisar e verificar as quais combinam ou se encaixam com o que você estará desenvolvendo, 
+para aplicar no seu codigo.
+
+
+- ate o momento estamos usando 2 api's do accuweather, as quais são:
+	- Current Conditions -> para conseguir o clima atualmente na localização
+		- para usar essa API, na resource URL, é preciso passar o codigo do local, que será resgatado para as coordenadas
+		da latitude e da longitude
+		- passar a apikey, a language e enviar a requisição.
+
+	- Ao acessar novamente o API's Reference, acessar Locations API
+		- API Geoposition Search -> retorna informações sobre uma localização especifica com relação 
+		a Geoposition (lat,long)
+			- passar a apikey, a latitude, a longitude, language e enviar a requisição
+			- verificar as infos retornada em response
+			- acessar a aba cURL -> copiar o endereço para usar em nosso programa.
+
+- Para mostrarmos a temperatura atual corretamente e sabermos disso, então. 
+iremos formando uma string também com nome do local, pegando a cidade, o estado e o país, para apresentar,
+de maneira conjunta e tambem a key, para usar na api Current Conditions.
