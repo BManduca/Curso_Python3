@@ -74,7 +74,6 @@ else:
         '''
             essa impressão foi mais para meios de confirmação dos dados, por isso não usaremos mais
             print(pprint.pprint(json.loads(r2.text)));
-            
         '''
         #variavel para converter toda a informação contida no r2, para um dict python
         locationResponse = json.loads(r2.text);
