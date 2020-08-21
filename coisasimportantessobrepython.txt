@@ -278,3 +278,16 @@ para aplicar no seu codigo.
 - Para mostrarmos a temperatura atual corretamente e sabermos disso, então. 
 iremos formando uma string também com nome do local, pegando a cidade, o estado e o país, para apresentar,
 de maneira conjunta e tambem a key, para usar na api Current Conditions.
+
+
+
+Aula 36 - Obter Clima Atual
+
+Neste parte, iremos buscar o clima e a temperatura atual da minha localização.
+
+para isso, usaremos a API CurrentConditions do accuweather, passando a apikey e a language
+
+
+
+Aula 37 - Refactoring
+Efetuar melhora no código e organização 
