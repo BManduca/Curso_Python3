@@ -291,3 +291,23 @@ para isso, usaremos a API CurrentConditions do accuweather, passando a apikey e 
 
 Aula 37 - Refactoring
 Efetuar melhora no código e organização 
+
+Aula 40 - Previsão do tempo para os próximos 5 dias
+	- nesta aula estaremos add ao app uma previsão mais especifica, que seria para os proximos 5 dias.
+	- estaremos usando mais uma api do accuweather, que seria a Forecast API -> 5 Days of Daily Forecasts
+
+	- para fazer essa previsao para os proximos dias, será utilizado a API citado acima, 
+	e será feito um loop, armazenando as informações como dia da semana, temperatura max e min e informação sobre o clima,
+	cada dia da semana será uma posicão de um vetor digamos assim..
+	- estaremos utilizando e aprendendo tambem a utilizar o dia da semana no formato timestamp e também, 
+	convertendo o mesmo, para que apareça o nome certinho do dia da semana...o formato timestamp é interessante, 
+	pois o mesmo já é possível trazer neste formato a data, a hora....tudo formatado..
+	- para converter o formato timestamp para um objeto, é simples...
+		- primeiramente importamos no idle o modulo datetime, importando apartir deste um objeto do tipo date..
+		- em seguida fazemos date.fromtimestamp('aqui é passado a data no formato timestamp')
+		- para este objeto do tipo date, podemos utilizar um método chamado strftime(), esse método é interessante, 
+		pois, permite retornar o que quisermos, por exemplo, o mês, o dia, a hora, minuto...
+		- este metodo strftime(), na documentação, tem uma lista com vários parametros que podem ser passados, 
+		para retornar o que quisermos, como foi comentando, usando um para exemplo, para retornar o dia da semana, 
+		porém, como um número decimal, onde domingo seria 0 e os demais dias seguindo a sequencia...
+		 -representação: date.fromtimestamp().strftime("%w");
