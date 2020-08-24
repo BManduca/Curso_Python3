@@ -5,6 +5,7 @@ from datetime import date
 
 weekDays = ["Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado"];
 accuweatherAPIKey = 'jGB55F01d2EQWnBiFCPeqlra3A7GQIuV';
+mapboxAPIKey = 'pk.eyJ1IjoiYm1hbmR1Y2EiLCJhIjoiY2tlNmRmMGZwMGsxbzJycjNmZTQ1empiNSJ9.fz1jnUEuEGqpApZSMP7eoQ';
 
 '''
     imprimindo todas as infos presentes sobre a localização dentro da requisição r
@@ -164,22 +165,14 @@ def getForecastOf5Days(codigoLocal):
             return None;
 
 
-
-##        INICIANDO O PROGRAMA
-
-#criando uma variavel para armazenar as informações que seram retornadas ao chamar a função que obtem as coordenadas
-coordinates = getCoordinates();
-
-try:
+def showForecastWeather(lat,long):
     #criando agora uma variavel para armazenar as informações nome e o codigo do local
     #vale lembrar que a função getLocalCode, recebe dois parametros, que seram chaves do dict armazenado na var coordinates
-    local = getLocalCode(coordinates['lat'],coordinates['long']);
+    local = getLocalCode(lat,long);
 
     #criando a variavel para armazenar o as informações de clima e temperatura atual
     #e da mesma forma como no local, a funcao getTimeNow recebe dois parametro, que seram chaves do dict armazenados na var local
     currentWeather = getTimeNow(local['codigoLocal'],local['nomeLocal']);
-
-    currentForecastOf5Days = getForecastOf5Days(local['codigoLocal']);
 
     #print('\nObtendo clima de: ' + currentWeather['nomeLocal']);
     #print('Condição climática: ' + currentWeather['TextoClima']);
@@ -187,15 +180,22 @@ try:
 
     print('Previsão do tempo para hoje e para os próximos 5 dias: \n');
 
-    forecast5Days = getForecastOf5Days(local['codigoLocal']);
-    #print(pprint.pprint(forecast5Days));
+    currentForecastOf5Days = getForecastOf5Days(local['codigoLocal']);
     #fazendo um segundo for para trabalhar agora em cima dos cinco dias e das informações contidas em cada um
-    for day in forecast5Days:
+    for day in currentForecastOf5Days:
         print('Dia da semana: ' + day['day']);
         print('Temperatura mínima: ' + str(day['minimum']) + "\xb0" + "C");
         print('Temperatura máxima: ' + str(day['maximum']) + "\xb0" + "C");
         print('Clima durante o dia: ' + day['textWeatherDay']);
         print('Clima durante a noite: ' + day['textWeatherNight']);
         print('--------------------------------------------------');
+
+
+##        INICIANDO O PROGRAMA
+
+try:
+    #criando uma variavel para armazenar as informações que seram retornadas ao chamar a função que obtem as coordenadas
+    coordinates = getCoordinates();
+    showForecastWeather(coordinates['lat'],coordinates['long']);    
 except:
     print('Erro ao processar a solicitação. Entre em contato com o suporte!');

@@ -311,3 +311,17 @@ Aula 40 - Previsão do tempo para os próximos 5 dias
 		para retornar o que quisermos, como foi comentando, usando um para exemplo, para retornar o dia da semana, 
 		porém, como um número decimal, onde domingo seria 0 e os demais dias seguindo a sequencia...
 		 -representação: date.fromtimestamp().strftime("%w");
+
+Aula 43 - Desafio 2 - Pesquisa de Local
+
+	- primeiramente mostrar o clima atual 
+	- perguntar se desejaria visualizar a previsao para os proximos dias daquele local
+		- se caso inserir sim, irá mostrar a previsao para os proximos dias
+		- se caso inserir nao..
+			- O programa ira questionar se deseja consultar a previsao de outro local
+				- caso sim, inserir cidade e estado -> vai mostrar clima atual para o local escolhido e 
+				em seguida vai perguntar se gostaria de ver a previsao para os proximos dias e perguntara
+				se quer ver previsao de outro local(loop)
+				- cas nao, saira do programa.
+
+	- caso nao, 
